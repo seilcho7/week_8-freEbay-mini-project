@@ -111,6 +111,13 @@ class User {
                 
             });
     }
+
+    static getItems(id) {
+        return db.any(`select i.name, i.price, i.image from items i inner join purchases p on i.id = p.item_id where p.user_id = ${id}`)
+            .then((arrayOfItems) => {
+                return arrayOfItems;
+            });
+    }
 }
 
 module.exports = User;

@@ -11,9 +11,10 @@
     <ul>
         ${
             purchases.map((aPurchase) => {
-                return `<li>${aPurchase.item_id}</li>`
+                return `<li>${aPurchase.name} ${aPurchase.price} <img src="${aPurchase.image}" alt=""></li>`
             }).join('')
         }
+
     </ul>
 </body>
 </html>
