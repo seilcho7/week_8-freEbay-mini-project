@@ -37,13 +37,6 @@ app.use('/dashboard', dashboardRoutes);
 //  }
 //  demo();
 
-
-app.get('/dashboard', (req, res) => {
-    console.log(`The user id is: ${req.session.user}`);
-    res.send('Welcome!!!!');
-});
-
-
 app.listen(port, () => {
     console.log(`Running on port ${port}`);
 });

@@ -4,7 +4,8 @@ function welcome(req, res) {
     res.render('home', {
         locals: {
             freebay: 'Welcome to freEbay.',
-            message: 'Please log in to go to your dashboard.'
+            message: 'Please log in to go to your dashboard.',
+            email: ''
         }
     });
 }
@@ -35,7 +36,6 @@ async function login(req, res) {
             res.redirect('/dashboard');
         });
     } else {
-        console.log("HEELLLLLLOOOOO");
         // send the form back, but with the email already filled out.
         res.render('home', {
             locals: {

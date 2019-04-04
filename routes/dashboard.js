@@ -5,9 +5,9 @@ const Router = express.Router;
 const dashboardRoutes = Router();
 
 const {
-    welcome
-} = require('../controllers/home');
+    dashboardPage
+} = require('../controllers/dashboard');
 
-dashboardRoutes.get('/', welcome);
+dashboardRoutes.get('/', dashboardPage);
 
 module.exports = dashboardRoutes;
