@@ -7,8 +7,10 @@ app.set('view engine', 'html');
 app.set('views', 'views');
 
 const homeRoutes = require('./routes/home');
+const usersRoutes = require('./routes/users');
 
 app.use('/home', homeRoutes);
+app.use('/users', usersRoutes);
 
 
 
