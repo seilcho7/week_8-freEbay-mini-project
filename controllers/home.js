@@ -1,7 +1,7 @@
 function welcome(req, res) {
     res.render('home', {
         locals: {
-            welcome: 'Welcome to freEbay.',
+            freebay: 'Welcome to freEbay.',
             message: 'Please log in to go to your dashboard.'
         }
     });

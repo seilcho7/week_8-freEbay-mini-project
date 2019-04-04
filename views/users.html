@@ -9,6 +9,10 @@
 </head>
 <body>
     <ul>
-        ${message}
+        ${
+            users.map((oneUser) => {
+                return `<li>${oneUser.email}</li>`
+            }).join('')
+        }
     </ul>
 </html>
