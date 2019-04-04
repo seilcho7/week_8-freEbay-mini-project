@@ -103,6 +103,14 @@ class User {
     checkPassword(aPassword) {
         return bcrypt.compareSync(aPassword, this.password);
     }
+
+    static getPurchases(id) {
+        return db.any(`select * from purchases where user_id=${id}`)
+            .then((arrayOfPurchases) => {
+                return arrayOfPurchases;
+                
+            });
+    }
 }
 
 module.exports = User;
