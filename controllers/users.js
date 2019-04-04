@@ -15,6 +15,7 @@ function retrieveAll(req, res) {
 }
 
 function retrieveOne(req, res) {
+    console.log(req.body);
     res.render('users', { 
         locals: {
             message: `Retrieved ${req.params.id}`

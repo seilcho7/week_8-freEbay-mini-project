@@ -110,15 +110,6 @@ class User {
         // const isCorrect = bcrypt.compareSync(aPassword, this.password);
         return bcrypt.compareSync(aPassword, this.password);
     }
-
-
-
-
-
 }
-
-
-
-
 
 module.export = User;

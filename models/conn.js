@@ -6,8 +6,6 @@ const pgp = require('pg-promise')({
     }  
 });
 
-
-
 const options = {
     host: 'localhost',
     database: 'freebay-app'
