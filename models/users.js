@@ -104,13 +104,13 @@ class User {
         return bcrypt.compareSync(aPassword, this.password);
     }
 
-    static getPurchases(id) {
-        return db.any(`select * from purchases where user_id=${id}`)
-            .then((arrayOfPurchases) => {
-                return arrayOfPurchases;
+    // static getPurchases(id) {
+    //     return db.any(`select * from purchases where user_id=${id}`)
+    //         .then((arrayOfPurchases) => {
+    //             return arrayOfPurchases;
                 
-            });
-    }
+    //         });
+    // }
 
     static countPurchase(id) {
         return db.one(`select count(user_id) from purchases where user_id=${id}`)

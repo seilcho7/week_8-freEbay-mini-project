@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Shop</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Home</li>
-            <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
+            <li class="breadcrumb-item" href="/dashboard">Home</li>
+            <li class="breadcrumb-item active" aria-current="page">Shop</a></li>
             <li class="breadcrumb-item"><a href="#">Sell</a></li>
             <li class="breadcrumb-item"><a href="/home">Log Out</a></li>
         </ol>
     </nav>
     <h1>${message}</h1>
-    <h2>${number}</h2>
     <ul>
         ${
-            purchases.map((aPurchase) => {
+            items.map((anItem) => {
                 return `<div class="card" style="width: 18rem;">
-                        <img src="${aPurchase.image}" class="card-img-top" alt="">
+                        <img src="${anItem.image}" class="card-img-top" alt="">
                         <div class="card-body">
-                            <h5 class="card-title">${aPurchase.name}</h5>
-                            <p class="card-text">$${aPurchase.price}</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h5 class="card-title">${anItem.name}</h5>
+                            <p class="card-text">$${anItem.price}</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
                         </div>
                     </div>`
             }).join('')
