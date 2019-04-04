@@ -15,9 +15,6 @@ class User {
     }
 
     static add(userData) {
-        // do an insert into the database
-        // not using ${} because I don't want to interpolate
-        // using ($) so that pg-promise does *safe* interpolation
         return db.one(`
             insert into users 
                 (first_name, last_name, email, password)
@@ -27,22 +24,13 @@ class User {
         `, [userData.first_name, userData.last_name, userData.email, userData.password])
         .then((data) => {
             console.log(data);
-            // console.log("you did the thing! good job.");
-            // console.log(`new user id is ${data.id}`);
             return data.id;
         })
-        // and return the id of the new user
     }
 
-    // "static" means that the function is something
-    // the class can do, but an instance cannot.
     static getById(id) {
-        // .any always returns an array
-        // Instead, we'll use .one
         return db.one(`select * from users where id=${id}`)
                     .then((userData) => {
-                        // You *must* use the `new` keyword
-                        // when you call a JavaScript constructor
                         const userInstance = new User(userData.id, 
                                                       userData.first_name,
                                                       userData.last_name,
@@ -52,7 +40,7 @@ class User {
                         return userInstance;
                     })
                     .catch(() => {
-                        return null; // signal an invalid value
+                        return null;
                     })
     }
 
@@ -71,11 +59,7 @@ class User {
                 })
     }
 
-    // no "static" since this is an "instance method"
-    // (it belongs to the individual instance)
     save() {
-        // use .result when you might want a report about
-        // how many rows got affected
         return db.result(`            
         update users set 
             first_name='${this.firstName}',
@@ -107,9 +91,8 @@ class User {
     }
 
     checkPassword(aPassword) {
-        // const isCorrect = bcrypt.compareSync(aPassword, this.password);
         return bcrypt.compareSync(aPassword, this.password);
     }
 }
 
-module.export = User;
+module.exports = User;

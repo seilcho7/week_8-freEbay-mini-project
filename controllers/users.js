@@ -1,15 +1,21 @@
-function create(req, res) {
+const User = require('../models/users');
+
+
+async function create(req, res) {
+    const theUserId = await User.add(req.body);
     res.render('users', {
         locals: {
-            message: `Created`
+            message: `Created user with user id ${theUserId}`
         }
     });
 }
 
-function retrieveAll(req, res) {
+async function retrieveAll(req, res) {
+    console.log(User);
+    const usersArray = await User.getAll();
     res.render('users', { 
         locals: {
-            message: "Retrieved all"
+            users: usersArray
         }
     });
 }
