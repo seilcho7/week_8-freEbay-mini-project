@@ -1,6 +1,5 @@
 const User = require('../models/users');
 
-
 async function create(req, res) {
     const theUserId = await User.add(req.body);
     res.render('users', {
@@ -20,24 +19,27 @@ async function retrieveAll(req, res) {
     });
 }
 
-function retrieveOne(req, res) {
-    console.log(req.body);
+async function retrieveOne(req, res) {
+    const theUser = await User.getById(req.params.id);
+    console.log(theUser.email);
     res.render('users', { 
         locals: {
-            message: `Retrieved ${req.params.id}`
+            oneUser: theUser
         }
     });
 }
 
-function update(req, res) {
+async function update(req, res) {
+    const theUser = await User.update(req.params.id, req.body);
     res.render('users', { 
         locals: {
-            message: `Updated ${req.params.id}`
+            message: `Updated user ${req.params.id}`
         }
     });
 }
 
-function deleteOne(req, res) {
+async function deleteOne(req, res) {
+    const theUser = await User.delete(req.params.id);
     res.render('users', { 
         locals: {
             message: `Deleted ${req.params.id}`

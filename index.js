@@ -51,7 +51,7 @@ app.post('/home', async (req, res) => {
         // Make sure the session is saved before we redirect.
         req.session.user = theUser.id;
         req.session.save(() => {
-            // res.redirect('/dashboard');
+            res.redirect('/users');
         });
     } else {
         // send the form back, but with the email already filled out.
