@@ -1,12 +1,32 @@
 {
   "name": "free_ebay_mini_project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.16.4",
+    "pg-promise": "^8.6.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seilcho7/week_8-freEbay-mini-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seilcho7/week_8-freEbay-mini-project/issues"
+  },
+  "homepage": "https://github.com/seilcho7/week_8-freEbay-mini-project#readme",
+  "description": ""
 }
