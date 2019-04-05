@@ -32,8 +32,7 @@ class Purchase {
                     const aPurchase = new Purchase(
                         purchaseData.id,
                         purchaseData.user_id,
-                        purchaseData.item_id
-                       
+                        purchaseData.item_id         
                     );
                     return aPurchase;
                 });

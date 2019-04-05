@@ -10,7 +10,7 @@ create table items (
     id serial primary key,
     name varchar(200),
     price integer,
-    image varchar(5000),
+    image varchar(5000)
 );
 
 create table purchases (
@@ -21,7 +21,6 @@ create table purchases (
 
 create table sells (
     id serial primary key,
-    purchases_id integer REFERENCES purchases(id),
     user_id integer references users(id),
     item_id integer references items(id)
 );

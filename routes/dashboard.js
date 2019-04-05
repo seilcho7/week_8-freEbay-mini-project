@@ -10,6 +10,6 @@ const {
 } = require('../controllers/dashboard');
 
 dashboardRoutes.get('/', dashboardPage);
-dashboardRoutes.get('/:itemId', sellButton);
+dashboardRoutes.post('/:itemId', sellButton);
 
 module.exports = dashboardRoutes;

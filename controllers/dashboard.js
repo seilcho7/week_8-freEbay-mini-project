@@ -25,12 +25,7 @@ async function sellButton(req, res) {
     // console.log(`SOLD THIS ITEM: `, req.params)
     const {itemId} = req.params;
     const sell = await Purchase.delete(req.session.user, itemId);
-    console.log(`akjsdhkajdhajskdhajskdhkajsdaksjdhkasdhadklsj ${itemId}`);
-    res.render('users', { 
-        locals: {
-            messages: `Deleted ${req.params.id}`
-        }
-    });
+    res.redirect('/sells');
 }
 
 module.exports = {

@@ -5,7 +5,7 @@ const Router = express.Router;
 const shopRoutes = Router();
 
 const {
-    retrieveAll,
+    retrieveAll
 } = require('../controllers/shop');
 
 shopRoutes.get('/', retrieveAll);

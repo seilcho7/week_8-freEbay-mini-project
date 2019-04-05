@@ -25,13 +25,13 @@ const homeRoutes = require('./routes/home');
 const usersRoutes = require('./routes/users');
 const dashboardRoutes = require('./routes/dashboard');
 const shopRoutes = require('./routes/shop');
-const sellRoutes = require('./routes/sell');
+const sellRoutes = require('./routes/sells');
 
 app.use('/home', homeRoutes);
 app.use('/users', usersRoutes);
 app.use('/dashboard', dashboardRoutes);
 app.use('/shop', shopRoutes);
-app.use('/sell', sellRoutes);
+app.use('/sells', sellRoutes);
 
 // async function demo() {
 //     const user = await User.getByEmail('seilcho7@hotmail.com');
