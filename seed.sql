@@ -7,7 +7,7 @@ VALUES
 ;
 
 insert into items
-    (name, price, image)
+    (name, price, image, purchases_id)
 VALUES
     ('Soap', 2, 'https://cdn.shopify.com/s/files/1/0223/7461/products/B18BAR-SG-OPV3.png?v=1540480408'),
     ('Milk', 4, 'https://cdn.shopify.com/s/files/1/1078/0310/products/milk-broguiere-s-2-reduced-fat-milk-1_1024x1024.jpg?v=1500710707'),

@@ -5,9 +5,11 @@ const Router = express.Router;
 const dashboardRoutes = Router();
 
 const {
-    dashboardPage
+    dashboardPage,
+    sellButton
 } = require('../controllers/dashboard');
 
 dashboardRoutes.get('/', dashboardPage);
+dashboardRoutes.get('/:itemId', sellButton);
 
 module.exports = dashboardRoutes;

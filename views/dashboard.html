@@ -18,6 +18,7 @@
     </nav>
     <h1>${message}</h1>
     <h2>${number}</h2>
+
     <ul>
         ${
             purchases.map((aPurchase) => {
@@ -25,8 +26,9 @@
                         <img src="${aPurchase.image}" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">${aPurchase.name}</h5>
+                            <!-- <h5>${aPurchase.id}</h5> -->
                             <p class="card-text">$${aPurchase.price}</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="/dashboard/${aPurchase.id}" class="btn btn-primary">Sell</a>
                         </div>
                     </div>`
             }).join('')

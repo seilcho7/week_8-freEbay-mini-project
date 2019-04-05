@@ -7,6 +7,10 @@ class Purchase {
         this.itemId = item_id;
     }
 
+    static delete(id, itemId) {
+        return db.result('delete from purchases where user_id=$1 and item_id=$2', [id, itemId]);
+    }
+
     static getById(id) {
         return db.one(`select * from purchases where id=${id}`)
             .then((purchaseData) => {

@@ -11,7 +11,7 @@ class Item {
     static getAll() {
         return db.any(`select * from items`)
             .then((result) => {
-                console.log(result);
+                // console.log(result);
                 return result;
             });
     }
@@ -25,13 +25,29 @@ class Item {
                     itemData.price,
                     itemData.image
                     );
-                console.log(itemInstance);
+                // console.log(itemInstance);
                 return itemInstance;
             });
             // .catch(() => {
             //     return null;
             // })
     }
+
+    static getItems(id) {
+        console.log(id)
+        return db.any(`select * from items i inner join purchases p on i.id = p.item_id where p.user_id=${id}`)
+            .then((arrayOfItems) => {
+                return arrayOfItems;
+            });
+    }
+
+    // static getAllNotInCart(id) {
+    //     return db.any(`select i.name, i.price, i.image from items i left join purchases p on i.id = p.item_id where p.item_id is null  and p.user_id = ${id}`)
+    //         .then((result) => {
+    //             // console.log(result);
+    //             return result;
+    //         });
+    // }
 }
 
 module.exports = Item;
