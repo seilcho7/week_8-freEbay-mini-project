@@ -1,25 +1,16 @@
 // const User = require('../models/users');
 const Sell = require('../models/sells');
 
-// async function addToSells(req, res) {
-//     const sellItemId = await Sell.add(req.body);
-//     console.log(req.body);
-//     res.render('sells', {
-//         locals: {
-//             message: `Listed ${sellItemId}`
-//         }
-//     });
-// }
-
-async function welcome(req, res) {
+async function retrieveAll(req, res) {
+    const theList = await Sell.getById(req.session.user);
     res.render('sells', {
         locals: {
-            message: `WELCOME`
+            message: `Item(s) listed for selling:`,
+            list: theList
         }
     });
 }
 
 module.exports = {
-    // addToSells
-    welcome
+    retrieveAll
 }

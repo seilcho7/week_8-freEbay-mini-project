@@ -5,11 +5,9 @@ const Router = express.Router;
 const sellRoutes = Router();
 
 const {
-    // addToSells
-    welcome
+    retrieveAll
 } = require('../controllers/sells');
 
-// sellRoutes.get('/', addToSells);
-sellRoutes.get('/', welcome)
+sellRoutes.get('/', retrieveAll);
 
 module.exports = sellRoutes;

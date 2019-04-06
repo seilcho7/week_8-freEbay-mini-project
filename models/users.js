@@ -23,7 +23,6 @@ class User {
             returning id, first_name, last_name
         `, [userData.first_name, userData.last_name, userData.email, userData.password])
         .then((data) => {
-            console.log(data);
             return data.id;
         })
     }
@@ -40,9 +39,6 @@ class User {
                     );
                 return userInstance;
             })
-            // .catch(() => {
-            //     return null;
-            // })
     }
 
     static getAll() {

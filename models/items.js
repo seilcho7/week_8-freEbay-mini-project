@@ -11,7 +11,6 @@ class Item {
     static getAll() {
         return db.any(`select * from items`)
             .then((result) => {
-                // console.log(result);
                 return result;
             });
     }
@@ -25,12 +24,8 @@ class Item {
                     itemData.price,
                     itemData.image
                     );
-                // console.log(itemInstance);
                 return itemInstance;
             });
-            // .catch(() => {
-            //     return null;
-            // })
     }
 
     static getItems(id) {

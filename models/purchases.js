@@ -8,7 +8,7 @@ class Purchase {
     }
 
     static delete(id, itemId) {
-        return db.result('delete from purchases where user_id=$1 and item_id=$2', [id, itemId]);
+        return db.result(`delete from purchases where user_id=$1 and id=$2`, [id, itemId]);
     }
 
     static getById(id) {
@@ -24,8 +24,6 @@ class Purchase {
     }
 
     static getAll() {
-        // .any returns 0 or more results in an array
-        // but that's async, so we `return` the call to db.any
         return db.any(`select * from purchases`)
             .then((arrayOfPurchases) => {
                 return arrayOfPurchases.map((purchaseData) => {
@@ -36,6 +34,13 @@ class Purchase {
                     );
                     return aPurchase;
                 });
+            });
+    }
+
+    static getItemId(itemId) {
+        return db.one(`select item_id from purchases where id=$1`, [parseInt(itemId)])
+            .then((item) => {
+                return item.item_id;
             });
     }
 }

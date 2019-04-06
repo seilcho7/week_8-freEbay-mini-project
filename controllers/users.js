@@ -10,7 +10,6 @@ async function create(req, res) {
 }
 
 async function retrieveAll(req, res) {
-    console.log(User);
     const usersArray = await User.getAll();
     res.render('users', { 
         locals: {
@@ -21,7 +20,6 @@ async function retrieveAll(req, res) {
 
 async function retrieveOne(req, res) {
     const theUser = await User.getById(req.params.id);
-    console.log(theUser.email);
     res.render('users', { 
         locals: {
             oneUser: theUser

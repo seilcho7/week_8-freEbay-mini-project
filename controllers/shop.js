@@ -4,7 +4,7 @@ async function retrieveAll(req, res) {
     const itemsArray = await Item.getAll();
     res.render('shop', { 
         locals: {
-            message: `Items available to purchase:`,
+            message: `Item(s) available to purchase:`,
             items: itemsArray
         }
     });
