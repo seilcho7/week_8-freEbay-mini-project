@@ -6,8 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h3 {
+            text-align: center;
+            margin: 1em;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
 </head>
 <body>
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>freEbay</h1>      
+            <p>Better than Ebay</p>
+        </div>
+    </div>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">Home</li>
@@ -16,10 +33,9 @@
             <li class="breadcrumb-item"><a href="/home">Log Out</a></li>
         </ol>
     </nav>
-    <h1>${message}</h1>
-    <h2>${number}</h2>
-
-    <ul>
+    <h3>${message}</h3>
+    <h3>${number}</h3>
+    <div class="items">
         ${
             purchases.map((aPurchase) => {
                 return `<div class="card" style="width: 18rem;">
@@ -32,14 +48,12 @@
                                 action="/dashboard/${aPurchase.id}"
                                 method="POST"
                             >
-
                             <button class="btn btn-primary">Sell</button>
-
                             </form>
                         </div>
                     </div>`
             }).join('')
         }
-    </ul>
+    </div>
 </body>
 </html>

@@ -5,9 +5,11 @@ const Router = express.Router;
 const sellRoutes = Router();
 
 const {
-    retrieveAll
+    retrieveAll,
+    cancelButton
 } = require('../controllers/sells');
 
 sellRoutes.get('/', retrieveAll);
+sellRoutes.post('/:itemId', cancelButton);
 
 module.exports = sellRoutes;

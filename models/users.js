@@ -99,13 +99,6 @@ class User {
     checkPassword(aPassword) {
         return bcrypt.compareSync(aPassword, this.password);
     }
-
-    static countPurchase(id) {
-        return db.one(`select count(user_id) from purchases where user_id=${id}`)
-            .then((count) => {
-                return count;
-            });
-    }
 }
 
 module.exports = User;

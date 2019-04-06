@@ -6,8 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shop</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h3 {
+            text-align: center;
+            margin: 1em;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
 </head>
 <body>
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>freEbay</h1>      
+            <p>Better than Ebay</p>
+        </div>
+    </div>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
@@ -16,11 +33,12 @@
             <li class="breadcrumb-item"><a href="/home">Log Out</a></li>
         </ol>
     </nav>
-    <h1>${message}</h1>
-    <ul>
+    <h3>${message}</h3>
+    <div class="items">
         ${
             items.map((anItem) => {
-                return `<div class="card" style="width: 18rem;">
+                return `
+                        <div class="card" style="width: 18rem;">
                         <img src="${anItem.image}" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">${anItem.name}</h5>
@@ -30,6 +48,6 @@
                     </div>`
             }).join('')
         }
-    </ul>
+    </div>
 </body>
 </html>

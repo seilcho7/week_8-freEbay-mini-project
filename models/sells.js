@@ -21,10 +21,28 @@ class Sell {
     }
 
     static getById(id) {
-        return db.any(`select * from sells inner join items on sells.item_id = items.id where user_id=${id}`)
+        return db.any(`select s.id, i.name, i.price, i.image from sells s inner join items i on s.item_id = i.id where user_id=${id}`)
             .then((item) => {
                 return item;
             })
+    }
+
+    static delete(id, itemId) {
+        return db.result(`delete from sells where user_id=$1 and id=$2`, [id, itemId]);
+    }
+
+    static getItemId(itemId) {
+        return db.one(`select item_id from sells where id=$1`, [parseInt(itemId)])
+            .then((item) => {
+                return item.item_id;
+            });
+    }
+
+    static countSell(id) {
+        return db.one(`select count(user_id) from sells where user_id=${id}`)
+            .then((count) => {
+                return count;
+            });
     }
 }
 

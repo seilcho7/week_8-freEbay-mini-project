@@ -7,6 +7,19 @@ class Purchase {
         this.itemId = item_id;
     }
 
+    static add(id, itemId) {
+        return db.one(`
+            insert into purchases
+                (user_id, item_id)
+            values 
+                ($1, $2)
+            returning id, user_id, item_id
+        `, [id, itemId])
+        .then((data) => {
+            return data;
+        })
+    }
+
     static delete(id, itemId) {
         return db.result(`delete from purchases where user_id=$1 and id=$2`, [id, itemId]);
     }
@@ -41,6 +54,13 @@ class Purchase {
         return db.one(`select item_id from purchases where id=$1`, [parseInt(itemId)])
             .then((item) => {
                 return item.item_id;
+            });
+    }
+    
+    static countPurchase(id) {
+        return db.one(`select count(user_id) from purchases where user_id=${id}`)
+            .then((count) => {
+                return count;
             });
     }
 }

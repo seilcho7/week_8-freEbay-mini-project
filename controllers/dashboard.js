@@ -6,7 +6,7 @@ const Sell = require('../models/sells');
 async function dashboardPage(req, res) {
     const userData = await User.getById(req.session.user);
     const itemData = await Item.getItems(req.session.user);
-    const countData = await User.countPurchase(req.session.user);
+    const countData = await Purchase.countPurchase(req.session.user);
 
     res.render('dashboard', {
         locals: {
@@ -22,7 +22,7 @@ async function sellButton(req, res) {
     const theItemId = await Purchase.getItemId(itemId);
     const addToSell = await Sell.add(req.session.user, theItemId);
     const sell = await Purchase.delete(req.session.user, parseInt(itemId));
-    res.redirect('/sells');
+    res.redirect('/dashboard');
 }
 
 module.exports = {
