@@ -12,10 +12,9 @@ async function retrieveAll(req, res) {
 }
 
 async function buyButton(req, res) {
-    const {itemId} = req.params;
-    // const theItem = await Item.getById(itemId);
+    const itemId = req.body.id;
     const addToPurchase = await Purchase.add(req.session.user, itemId);
-    res.redirect('/shop');
+    // res.redirect('/shop');
 }
 
 module.exports = {

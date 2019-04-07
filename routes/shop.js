@@ -10,6 +10,6 @@ const {
 } = require('../controllers/shop');
 
 shopRoutes.get('/', retrieveAll);
-shopRoutes.post('/:itemId', buyButton);
+shopRoutes.post('/', buyButton);
 
 module.exports = shopRoutes;
