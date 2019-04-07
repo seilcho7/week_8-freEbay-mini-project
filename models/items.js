@@ -35,6 +35,19 @@ class Item {
             });
     }
 
+    static add(name, price, image) {
+        return db.one(`
+            insert into items
+                (name, price, image)
+            values 
+                ($1, $2, $3)
+            returning id, name, price, image
+        `, [name, price, image])
+        .then((data) => {
+            return data;
+        })
+    }
+
     // static getAllNotInCart(id) {
     //     return db.any(`select i.name, i.price, i.image from items i left join purchases p on i.id = p.item_id where p.item_id is null  and p.user_id = ${id}`)
     //         .then((result) => {

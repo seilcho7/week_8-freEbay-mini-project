@@ -17,7 +17,20 @@ async function buyButton(req, res) {
     // res.redirect('/shop');
 }
 
+async function createItem(req, res) {
+    const name = req.body.name;
+    const price = req.body.price;
+    const image = req.body.image;
+    console.log(name);
+    console.log(price);
+    console.log(image);
+
+    const createAnItem = await Item.add(name, price, image);
+    res.redirect('/shop');
+}
+
 module.exports = {
     retrieveAll,
-    buyButton
+    buyButton,
+    createItem
 };

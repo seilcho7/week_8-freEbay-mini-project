@@ -6,10 +6,12 @@ const shopRoutes = Router();
 
 const {
     retrieveAll,
-    buyButton
+    buyButton,
+    createItem
 } = require('../controllers/shop');
 
 shopRoutes.get('/', retrieveAll);
 shopRoutes.post('/', buyButton);
+shopRoutes.post('/create', createItem);
 
 module.exports = shopRoutes;
