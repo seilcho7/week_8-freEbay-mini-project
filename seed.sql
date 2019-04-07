@@ -19,12 +19,12 @@ VALUES
     ('Shoes', 45, 'https://dsw.scene7.com/is/image/DSWShoes/404995_001_ss_01?$pdp-image$')
 ;
 
-insert into purchases
-    (user_id, item_id)
-VALUES
-    (1, 1),
-    (1, 2),
-    (1, 3)
+-- insert into purchases
+--     (user_id, item_id)
+-- VALUES
+--     (1, 1),
+--     (1, 2),
+--     (1, 3)
     -- (1, 1),
     -- (1, 2),
     -- (1, 3),

@@ -29,7 +29,6 @@ class Item {
     }
 
     static getItems(id) {
-        console.log(id)
         return db.any(`select * from items i inner join purchases p on i.id = p.item_id where p.user_id=${id}`)
             .then((arrayOfItems) => {
                 return arrayOfItems;
