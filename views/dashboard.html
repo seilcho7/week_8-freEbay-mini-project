@@ -11,10 +11,16 @@
             text-align: center;
             margin: 1em;
         }
-
         .items {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .items img {
+            height: 60%;
+        }
+        .card-body {
+            text-align: center;
         }
     </style>
 </head>
@@ -42,7 +48,7 @@
                         <img src="${aPurchase.image}" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">${aPurchase.name}</h5>
-                            <h5>${aPurchase.id}</h5>
+                            <!-- <h5>${aPurchase.id}</h5> -->
                             <p class="card-text">$${aPurchase.price}</p>
                             <form
                                 action="/dashboard/${aPurchase.id}"
