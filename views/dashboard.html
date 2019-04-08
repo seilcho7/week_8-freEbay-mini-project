@@ -7,6 +7,10 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
+        .jumbotron {
+            height: 7rem;
+            padding: 1rem;
+        }
         h3 {
             text-align: center;
             margin: 1em;
@@ -52,7 +56,6 @@
                         <img src="${aPurchase.image}" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">${aPurchase.name}</h5>
-                            <!-- <h5>${aPurchase.id}</h5> -->
                             <p class="card-text">$${aPurchase.price}</p>
                             <form
                                 action="/dashboard/${aPurchase.id}"

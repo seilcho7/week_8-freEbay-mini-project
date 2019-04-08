@@ -21,16 +21,19 @@ async function createItem(req, res) {
     const name = req.body.name;
     const price = req.body.price;
     const image = req.body.image;
-    console.log(name);
-    console.log(price);
-    console.log(image);
-
     const createAnItem = await Item.add(name, price, image);
     res.redirect('/shop');
+}
+
+
+async function deleteItem(req, res) {
+    const id = req.body.id;
+    const deleteAnItem = await Item.delete(id);
 }
 
 module.exports = {
     retrieveAll,
     buyButton,
-    createItem
+    createItem,
+    deleteItem
 };

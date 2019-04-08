@@ -8,6 +8,10 @@ class Item {
         this.image = image;
     }
 
+    static delete(id) {
+        return db.result('delete from items where id=$1', [id]);
+    }
+
     static getAll() {
         return db.any(`select * from items`)
             .then((result) => {

@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
+        .jumbotron {
+            height: 7rem;
+            padding: 1rem;
+        }
         h3 {
             text-align: center;
             margin: 1em;
@@ -109,6 +113,28 @@
             <button type="submit" class="btn btn-primary">Create</button>
         </div>
     </form>
+    <h3>Delete an item</h3>
+    <form
+        action="/shop/delete"
+        method="POST"
+    >
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Select name</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+            ${
+                items.map((anItem) => {
+                    return `
+                        <option>
+                            ${anItem.name}
+                        </option>`
+                }).join('')
+            }
+        </select>
+        <div style="text-align: center; margin-bottom: 2rem; margin-top: 1rem;">
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </div>
+    </form>
+    </div>
 </body>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
