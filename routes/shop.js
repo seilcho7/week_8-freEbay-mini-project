@@ -8,12 +8,12 @@ const {
     retrieveAll,
     buyButton,
     createItem,
-    deleteItem
+    // deleteItem
 } = require('../controllers/shop');
 
 shopRoutes.get('/', retrieveAll);
 shopRoutes.post('/', buyButton);
 shopRoutes.post('/create', createItem);
-shopRoutes.post('/delete', deleteItem);
+// shopRoutes.post('/delete', deleteItem);
 
 module.exports = shopRoutes;

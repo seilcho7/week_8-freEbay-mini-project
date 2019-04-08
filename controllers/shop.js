@@ -25,16 +25,15 @@ async function createItem(req, res) {
     res.redirect('/shop');
 }
 
-async function deleteItem(req, res) {
-    console.log(req.body.selectDelete);
-    const name = req.body.selectDelete;
-    const deleteAnItem = await Item.deleteByName(name);
-    res.redirect('/shop');
-}
+// async function deleteItem(req, res) {
+//     const name = req.body.selectDelete;
+//     const deleteAnItem = await Item.deleteByName(name);
+//     res.redirect('/shop');
+// }
 
 module.exports = {
     retrieveAll,
     buyButton,
     createItem,
-    deleteItem
+    // deleteItem
 };
