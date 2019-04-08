@@ -25,10 +25,11 @@ async function createItem(req, res) {
     res.redirect('/shop');
 }
 
-
 async function deleteItem(req, res) {
-    const id = req.body.id;
-    const deleteAnItem = await Item.delete(id);
+    console.log(req.body.selectDelete);
+    const name = req.body.selectDelete;
+    const deleteAnItem = await Item.deleteByName(name);
+    res.redirect('/shop');
 }
 
 module.exports = {

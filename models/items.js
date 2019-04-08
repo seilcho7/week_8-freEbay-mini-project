@@ -8,8 +8,8 @@ class Item {
         this.image = image;
     }
 
-    static delete(id) {
-        return db.result('delete from items where id=$1', [id]);
+    static deleteByName(name) {
+        return db.result('delete from items where name=$1', [name]);
     }
 
     static getAll() {
