@@ -17,10 +17,11 @@ async function buyButton(req, res) {
     // res.redirect('/shop');
 }
 
+const escape = require('../utils');
 async function createItem(req, res) {
-    const name = req.body.name;
-    const price = req.body.price;
-    const image = req.body.image;
+    const name = escape(req.body.name);
+    const price = escape(req.body.price);
+    const image = escape(req.body.image);
     const createAnItem = await Item.add(name, price, image);
     res.redirect('/shop');
 }

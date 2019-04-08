@@ -20,7 +20,7 @@ class Item {
     }
 
     static getById(id) {
-        return db.one(`select * from items where id=${id}`)
+        return db.one(`select * from items where id=$1`, [id])
             .then((itemData) => {
                 const itemInstance = new Item(
                     itemData.id,
@@ -33,7 +33,7 @@ class Item {
     }
 
     static getItems(id) {
-        return db.any(`select * from items i inner join purchases p on i.id = p.item_id where p.user_id=${id}`)
+        return db.any(`select * from items i inner join purchases p on i.id = p.item_id where p.user_id=$1`, [id])
             .then((arrayOfItems) => {
                 return arrayOfItems;
             });

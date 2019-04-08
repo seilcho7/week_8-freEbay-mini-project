@@ -5,6 +5,9 @@ const app = express();
 const es6Renderer = require('express-es6-template-engine');
 const port = process.env.PORT;
 
+const helmet = require('helmet');
+app.use(helmet());
+
 const User = require('./models/users');
 const Item = require('./models/items');
 const Purchase = require('./models/purchases');
