@@ -1,9 +1,9 @@
 insert into users
     (first_name, last_name, email, password)
 VALUES 
-    ('Seil', 'Cho', 'seilcho7@hotmail.com', 'sc1234'),
-    ('Paul', 'Garg', 'pg123@gmail.com', 'pg1234'),
-    ('Chris', 'Garcia', 'cg999@yahoo.com', 'cg1234')
+    ('Seil', 'Cho', 'seilcho7@hotmail.com', '$2a$10$xEKfN7mUGSR4EguIvbrjNuhYRLJYHBpwKIXyESIG/884VJq1ACRb2'),
+    ('Paul', 'Garg', 'pg123@gmail.com', '$2a$10$xEKfN7mUGSR4EguIvbrjNuhYRLJYHBpwKIXyESIG/884VJq1ACRb2'),
+    ('Chris', 'Garcia', 'cg999@yahoo.com', '$2a$10$xEKfN7mUGSR4EguIvbrjNuhYRLJYHBpwKIXyESIG/884VJq1ACRb2')
 ;
 
 insert into items
