@@ -8,10 +8,6 @@ const port = process.env.PORT;
 const helmet = require('helmet');
 app.use(helmet());
 
-const User = require('./models/users');
-const Item = require('./models/items');
-const Purchase = require('./models/purchases');
-
 const session = require('express-session');
 const FileStore = require(`session-file-store`)(session);
 
@@ -31,7 +27,7 @@ const dashboardRoutes = require('./routes/dashboard');
 const shopRoutes = require('./routes/shop');
 const sellRoutes = require('./routes/sells');
 
-app.use('/home', homeRoutes);
+app.use('/', homeRoutes);
 app.use('/dashboard', dashboardRoutes);
 app.use('/shop', shopRoutes);
 app.use('/sells', sellRoutes);

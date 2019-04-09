@@ -6,7 +6,7 @@ async function retrieveAll(req, res) {
     res.render('shop', { 
         locals: {
             message: `Item(s) available to purchase:`,
-            items: itemsArray
+            items: itemsArray,
         }
     });
 }
@@ -14,7 +14,8 @@ async function retrieveAll(req, res) {
 async function buyButton(req, res) {
     const itemId = req.body.id;
     const addToPurchase = await Purchase.add(req.session.user, itemId);
-    // res.redirect('/shop');
+    const theItem = await Item.getById(itemId);
+    res.redirect('/shop');
 }
 
 const escape = require('../utils');
