@@ -16,30 +16,6 @@ VALUES
     ('T-Shirt', 20, 'https://lumiere-a.akamaihd.net/v1/images/file_bf3b6713.jpeg?width=1200&region=0%2C0%2C2000%2C2000&quality=8'),
     ('PS4', 300, 'https://psmedia.playstation.com/is/image/psmedia/ps4-slim-black-two-column-buy-01-en-13nov18_1542102620416?$Icon$'),
     ('TV', 500, 'https://assets.pcmag.com/media/images/506187-toshiba-fire-tv-edition.jpg?width=810&height=456'),
-    ('Shoes', 45, 'https://dsw.scene7.com/is/image/DSWShoes/404995_001_ss_01?$pdp-image$')
-;
-
--- insert into purchases
---     (user_id, item_id)
--- VALUES
---     (1, 1),
---     (1, 2),
---     (1, 3)
-    -- (1, 1),
-    -- (1, 2),
-    -- (1, 3),
-    -- (1, 1),
-    -- (1, 2),
-    -- (1, 3),
-    -- (1, 1),
-    -- (1, 2),
-    -- (1, 3),
-    -- (1, 1),
-    -- (1, 2),
-    -- (1, 3),
-    -- (1, 1),
-    -- (1, 2),
-    -- (1, 3),
-    -- (2, 1),
-    -- (3, 2)
+    ('Shoes', 45, 'https://dsw.scene7.com/is/image/DSWShoes/404995_001_ss_01?$pdp-image$'),
+    ('Ashish Garg', 1, 'https://media.licdn.com/dms/image/C4E03AQHuSfwoewb5Vg/profile-displayphoto-shrink_800_800/0?e=1560384000&amp;v=beta&amp;t=6dPohb6KhxPqEo5drt8AI9FTQ4c9ZrZa3XK8XSHaga4')
 ;
