@@ -10,6 +10,7 @@ app.use(helmet());
 
 const session = require('express-session');
 const FileStore = require(`session-file-store`)(session);
+const setupAuth = require('./auth');
 
 app.engine('html', es6Renderer);
 app.set('view engine', 'html');
@@ -22,12 +23,14 @@ app.use(session({
     secret: process.env.SESSION_SECRET
 }));
 
-const homeRoutes = require('./routes/home');
+setupAuth(app);
+
+const loginRoutes = require('./routes/login');
 const dashboardRoutes = require('./routes/dashboard');
 const shopRoutes = require('./routes/shop');
 const sellRoutes = require('./routes/sells');
 
-app.use('/', homeRoutes);
+app.use('/login', loginRoutes);
 app.use('/dashboard', dashboardRoutes);
 app.use('/shop', shopRoutes);
 app.use('/sells', sellRoutes);

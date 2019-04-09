@@ -2,7 +2,7 @@ const User = require('../models/users');
 const escapeHtml = require('../utils');
 
 function welcome(req, res) {
-    res.render('home', {
+    res.render('login', {
         locals: {
             freebay: 'Welcome to freEbay.',
             message: 'Please log-in to go to your dashboard.',
@@ -12,7 +12,7 @@ function welcome(req, res) {
 }
 
 async function getLogin(req, res) {
-    res.render('home', {
+    res.render('login', {
         locals: {
             email: '',
             message: ''
@@ -37,7 +37,7 @@ async function login(req, res) {
             res.redirect('/dashboard');
         });
     } else {
-        res.render('home', {
+        res.render('login', {
             locals: {
                 email: req.body.email,
                 message: 'Password incorrect. Please try again.',
